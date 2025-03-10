@@ -19,6 +19,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Update navbar background on every scroll event
       setIsScrolled(window.scrollY > 10);
       
       // Update active section based on scroll position
@@ -45,8 +46,8 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
         isScrolled 
-          ? 'py-3 blur-backdrop border-b border-white/10 shadow-sm' 
-          : 'py-5 bg-transparent'
+          ? 'py-3 blur-backdrop border-b border-white/10 shadow-sm translate-y-0' 
+          : 'py-5 bg-transparent translate-y-0'
       )}
     >
       <div className="container max-w-6xl mx-auto px-4 md:px-6">

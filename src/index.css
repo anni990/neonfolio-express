@@ -118,4 +118,27 @@
   .blur-backdrop {
     @apply backdrop-blur-xl bg-white/80;
   }
+  
+  /* Enhanced animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 5px 0 rgba(97, 218, 251, 0.2);
+    }
+    50% { 
+      box-shadow: 0 0 20px 5px rgba(97, 218, 251, 0.4);
+    }
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
 }

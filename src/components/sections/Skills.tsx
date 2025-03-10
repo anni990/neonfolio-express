@@ -1,42 +1,50 @@
 
 import React, { useRef, useEffect, useState } from 'react';
+import { Code, Database, Globe, Layout, Radio, User, Cpu, LineChart, BarChart, Brain, Terminal, GitBranch, ThumbsUp } from 'lucide-react';
 
 interface Skill {
   name: string;
-  level: number;
-  color?: string;
-  category: 'frontend' | 'backend' | 'tools';
+  icon: JSX.Element;
+  category: 'frontend' | 'backend' | 'ml' | 'tools';
 }
 
 const Skills = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
-  const [activeCategory, setActiveCategory] = useState<'frontend' | 'backend' | 'tools' | 'all'>('all');
+  const [activeCategory, setActiveCategory] = useState<'frontend' | 'backend' | 'ml' | 'tools' | 'all'>('all');
 
   const skills: Skill[] = [
     // Frontend
-    { name: 'HTML & CSS', level: 90, category: 'frontend' },
-    { name: 'JavaScript', level: 85, category: 'frontend' },
-    { name: 'TypeScript', level: 80, category: 'frontend' },
-    { name: 'React', level: 88, category: 'frontend' },
-    { name: 'Tailwind CSS', level: 85, category: 'frontend' },
-    { name: 'Vue.js', level: 75, category: 'frontend' },
+    { name: 'HTML & CSS', icon: <Layout className="w-10 h-10" />, category: 'frontend' },
+    { name: 'JavaScript', icon: <Code className="w-10 h-10" />, category: 'frontend' },
+    { name: 'TypeScript', icon: <Terminal className="w-10 h-10" />, category: 'frontend' },
+    { name: 'React', icon: <Radio className="w-10 h-10" />, category: 'frontend' },
+    { name: 'Tailwind CSS', icon: <ThumbsUp className="w-10 h-10" />, category: 'frontend' },
+    { name: 'Vue.js', icon: <Globe className="w-10 h-10" />, category: 'frontend' },
     
     // Backend
-    { name: 'Node.js', level: 82, category: 'backend' },
-    { name: 'Express', level: 78, category: 'backend' },
-    { name: 'MongoDB', level: 75, category: 'backend' },
-    { name: 'SQL', level: 72, category: 'backend' },
-    { name: 'GraphQL', level: 68, category: 'backend' },
-    { name: 'Python', level: 70, category: 'backend' },
+    { name: 'Node.js', icon: <Terminal className="w-10 h-10" />, category: 'backend' },
+    { name: 'Express', icon: <Radio className="w-10 h-10" />, category: 'backend' },
+    { name: 'MongoDB', icon: <Database className="w-10 h-10" />, category: 'backend' },
+    { name: 'SQL', icon: <Database className="w-10 h-10" />, category: 'backend' },
+    { name: 'GraphQL', icon: <Globe className="w-10 h-10" />, category: 'backend' },
+    { name: 'Python', icon: <Code className="w-10 h-10" />, category: 'backend' },
+    
+    // Machine Learning
+    { name: 'Machine Learning', icon: <Brain className="w-10 h-10" />, category: 'ml' },
+    { name: 'TensorFlow', icon: <Cpu className="w-10 h-10" />, category: 'ml' },
+    { name: 'PyTorch', icon: <Brain className="w-10 h-10" />, category: 'ml' },
+    { name: 'Data Analysis', icon: <BarChart className="w-10 h-10" />, category: 'ml' },
+    { name: 'Pandas', icon: <LineChart className="w-10 h-10" />, category: 'ml' },
+    { name: 'NumPy', icon: <LineChart className="w-10 h-10" />, category: 'ml' },
     
     // Tools & Others
-    { name: 'Git', level: 88, category: 'tools' },
-    { name: 'Docker', level: 72, category: 'tools' },
-    { name: 'CI/CD', level: 75, category: 'tools' },
-    { name: 'AWS', level: 65, category: 'tools' },
-    { name: 'Figma', level: 80, category: 'tools' },
-    { name: 'Testing', level: 75, category: 'tools' },
+    { name: 'Git', icon: <GitBranch className="w-10 h-10" />, category: 'tools' },
+    { name: 'Docker', icon: <Database className="w-10 h-10" />, category: 'tools' },
+    { name: 'CI/CD', icon: <Radio className="w-10 h-10" />, category: 'tools' },
+    { name: 'AWS', icon: <Database className="w-10 h-10" />, category: 'tools' },
+    { name: 'Figma', icon: <Layout className="w-10 h-10" />, category: 'tools' },
+    { name: 'Testing', icon: <ThumbsUp className="w-10 h-10" />, category: 'tools' },
   ];
 
   useEffect(() => {
@@ -45,11 +53,13 @@ const Skills = () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
           
-          const skillBars = document.querySelectorAll('.skill-bar');
-          skillBars.forEach((bar, index) => {
+          const skillItems = document.querySelectorAll('.skill-item');
+          skillItems.forEach((item, index) => {
             setTimeout(() => {
-              bar.classList.add('animate');
-            }, 300 + index * 50);
+              item.classList.add('animate-fade-in');
+              item.classList.remove('opacity-0');
+              item.classList.add('animate-float');
+            }, 100 + index * 50);
           });
         }
       },
@@ -90,13 +100,13 @@ const Skills = () => {
           </h2>
           
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            A collection of technologies and tools I've mastered throughout my journey as a developer.
+            A collection of technologies and tools I've mastered throughout my journey as a developer and ML enthusiast.
           </p>
         </div>
         
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {['all', 'frontend', 'backend', 'tools'].map((category) => (
+          {['all', 'frontend', 'backend', 'ml', 'tools'].map((category) => (
             <button
               key={category}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
@@ -106,22 +116,23 @@ const Skills = () => {
               }`}
               onClick={() => setActiveCategory(category as any)}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {category === 'ml' ? 'Machine Learning' : category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
           ))}
         </div>
         
-        {/* Skills */}
-        <div ref={skillsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Skills Grid */}
+        <div ref={skillsRef} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {filteredSkills.map((skill, index) => (
-            <div key={index} className="bg-white/80 rounded-xl p-6 glass-panel hover-card">
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="font-medium text-code-dark">{skill.name}</h3>
-                <span className="text-sm text-code-blue font-mono">{skill.level}%</span>
+            <div 
+              key={index} 
+              className="skill-item opacity-0 bg-white/80 rounded-xl p-4 glass-panel hover-card flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:bg-code-blue/10"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="w-16 h-16 rounded-full bg-code-blue/10 flex items-center justify-center text-code-blue">
+                {skill.icon}
               </div>
-              <div className="skill-bar" style={{ '--skill-percent': `${skill.level}%` } as any}>
-                <div className="absolute inset-0 w-0 h-full bg-gradient-to-r from-code-blue to-code-green rounded-full" />
-              </div>
+              <span className="text-sm font-medium text-center">{skill.name}</span>
             </div>
           ))}
         </div>

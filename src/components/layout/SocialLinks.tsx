@@ -1,0 +1,60 @@
+
+import React from 'react';
+import { Github, Linkedin, Twitter, FileCode2, Mail, Database } from 'lucide-react';
+
+const SocialLinks = () => {
+  return (
+    <div className="fixed left-6 bottom-0 z-40 hidden md:flex flex-col gap-5 items-center">
+      <div className="flex flex-col gap-5 items-center">
+        <a 
+          href="https://github.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          aria-label="GitHub"
+        >
+          <Github className="w-5 h-5" />
+        </a>
+        <a 
+          href="https://linkedin.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          aria-label="LinkedIn"
+        >
+          <Linkedin className="w-5 h-5" />
+        </a>
+        <a 
+          href="https://twitter.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          aria-label="Twitter"
+        >
+          <Twitter className="w-5 h-5" />
+        </a>
+        <a 
+          href="mailto:hello@example.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          aria-label="Email"
+        >
+          <Mail className="w-5 h-5" />
+        </a>
+        <a 
+          href="https://kaggle.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          aria-label="Kaggle"
+        >
+          <Database className="w-5 h-5" />
+        </a>
+      </div>
+      <div className="h-20 w-px bg-code-blue/30 mt-2"></div>
+    </div>
+  );
+};
+
+export default SocialLinks;
