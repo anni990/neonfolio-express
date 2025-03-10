@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Code, Database, Globe, Layout, Radio, User, Brain, Flask, ChevronRight } from 'lucide-react';
+import { Code, Database, Globe, Layout, Radio, User, Brain, FlaskConical, ChevronRight } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -46,7 +46,7 @@ const About = () => {
     { icon: <Globe className="w-5 h-5" />, label: 'Web Technologies' },
     { icon: <Radio className="w-5 h-5" />, label: 'Cloud Infrastructure' },
     { icon: <Brain className="w-5 h-5" />, label: 'Machine Learning' },
-    { icon: <Flask className="w-5 h-5" />, label: 'Data Analysis' },
+    { icon: <FlaskConical className="w-5 h-5" />, label: 'Data Analysis' },
   ];
 
   return (
