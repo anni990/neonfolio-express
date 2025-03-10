@@ -60,18 +60,18 @@ const About = () => {
           {/* Left column - Photo */}
           <div className="md:w-2/5 relative" ref={imageRef}>
             <div className="relative">
-              <div className="aspect-[4/5] bg-gradient-to-br from-code-blue/40 to-code-green/40 rounded-2xl overflow-hidden glass-panel about-image pulse-glow">
+              <div className="aspect-[4/5] bg-gradient-to-br from-code-blue/40 to-code-green/40 rounded-2xl overflow-hidden glass-panel about-image pulse-glow dark:from-code-blue/30 dark:to-code-green/30 dark:border-white/10">
                 <div className="absolute inset-0 flex items-center justify-center text-white/30 font-mono text-sm">
                   [Your Photo Here]
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-24 h-24 border border-code-blue/20 rounded-xl rotate-6 animate-float" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-code-green/20 rounded-xl -rotate-6 animate-float" style={{ animationDelay: '1s' }} />
+              <div className="absolute -top-6 -left-6 w-24 h-24 border border-code-blue/20 rounded-xl rotate-6 animate-float dark:border-code-blue/30" style={{ animationDelay: '0.5s' }} />
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-code-green/20 rounded-xl -rotate-6 animate-float dark:border-code-green/30" style={{ animationDelay: '1s' }} />
               
               {/* Code snippet */}
-              <div className="absolute -bottom-8 -left-4 md:-left-12 glass-panel px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-code-blue/5">
+              <div className="absolute -bottom-8 -left-4 md:-left-12 glass-panel px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-code-blue/5 dark:bg-gray-800/90 dark:border-white/10 dark:hover:bg-code-blue/10">
                 <pre className="text-xs md:text-sm font-mono text-code-dark dark:text-white">
                   <code>{`function Developer() {\n  return <Passionate />;\n}`}</code>
                 </pre>
@@ -81,7 +81,7 @@ const About = () => {
           
           {/* Right column - Content */}
           <div className="md:w-3/5" ref={contentRef}>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-code-blue/10 text-code-blue mb-6 opacity-0">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-code-blue/10 text-code-blue mb-6 opacity-0 dark:bg-code-blue/20">
               <span className="text-sm font-medium">About Me</span>
             </div>
             
@@ -102,7 +102,7 @@ const About = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {interests.map((interest, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-code-blue/5 dark:hover:bg-code-blue/10 transition-colors hover:shadow-md group">
-                    <div className="w-10 h-10 rounded-lg bg-code-blue/10 flex items-center justify-center text-code-blue skill-icon">
+                    <div className="w-10 h-10 rounded-lg bg-code-blue/10 flex items-center justify-center text-code-blue skill-icon dark:bg-code-blue/20">
                       {interest.icon}
                     </div>
                     <span className="text-sm font-medium dark:text-white group-hover:translate-x-1 transition-transform">{interest.label}</span>
@@ -114,7 +114,7 @@ const About = () => {
             <div className="opacity-0">
               <a 
                 href="#contact"
-                className="inline-flex items-center px-6 py-3 rounded-lg bg-code-blue text-white font-medium transition-all hover:shadow-lg hover:shadow-code-blue/20 hover:translate-y-[-2px] group"
+                className="inline-flex items-center px-6 py-3 rounded-lg bg-code-blue text-white font-medium transition-all hover:shadow-lg hover:shadow-code-blue/20 hover:translate-y-[-2px] group dark:hover:shadow-code-blue/40"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });

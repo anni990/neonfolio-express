@@ -138,7 +138,7 @@
   }
   
   .hover-card {
-    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg;
+    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg dark:hover:shadow-code-blue/20;
   }
   
   .mesh-background {
@@ -174,7 +174,7 @@
   
   /* New hover effects */
   .project-card {
-    @apply transition-all duration-500 hover:scale-[1.03] hover:shadow-xl;
+    @apply transition-all duration-500 hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-code-blue/20;
   }
   
   .project-card:hover .project-overlay {
@@ -186,7 +186,7 @@
   }
   
   .cert-card {
-    @apply transition-all duration-500 hover:scale-[1.05] hover:shadow-xl hover:rotate-1;
+    @apply transition-all duration-500 hover:scale-[1.05] hover:shadow-xl hover:rotate-1 dark:hover:shadow-code-blue/20;
   }
   
   .cert-card:hover .cert-content {
@@ -194,7 +194,7 @@
   }
   
   .about-image {
-    @apply transition-all duration-700 hover:shadow-2xl hover:shadow-code-blue/20;
+    @apply transition-all duration-700 hover:shadow-2xl hover:shadow-code-blue/20 dark:hover:shadow-code-blue/40;
     animation: float 6s ease-in-out infinite;
   }
   
