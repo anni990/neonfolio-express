@@ -79,7 +79,7 @@ const Certifications = () => {
     <section
       id="certifications"
       ref={sectionRef}
-      className="py-24 px-6 md:px-16 lg:px-24 relative bg-gradient-to-b from-white to-code-green/5 opacity-0"
+      className="py-24 px-6 md:px-16 lg:px-24 relative bg-gradient-to-b from-white to-code-green/5 dark:from-gray-900 dark:to-code-green/10 opacity-0"
     >
       <div className="absolute inset-0 mesh-background opacity-30 pointer-events-none" />
       
@@ -106,27 +106,27 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl overflow-hidden shadow-md opacity-0 hover-card flex flex-col"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md opacity-0 cert-card flex flex-col"
             >
-              <div className="aspect-[4/3] bg-code-blue/5 relative overflow-hidden">
+              <div className="aspect-[4/3] bg-code-blue/5 dark:bg-code-blue/10 relative overflow-hidden">
                 <img 
                   src={cert.image} 
                   alt={cert.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover animate-float"
                 />
               </div>
               
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="flex items-center text-xs text-foreground/50 mb-2">
+              <div className="p-6 flex-1 flex flex-col cert-content transition-colors duration-300">
+                <div className="flex items-center text-xs text-foreground/50 dark:text-white/50 mb-2">
                   <Calendar className="w-3 h-3 mr-1" />
                   <span>{cert.date}</span>
                 </div>
                 
-                <h3 className="font-semibold text-lg mb-1 text-code-dark">
+                <h3 className="font-semibold text-lg mb-1 text-code-dark dark:text-white">
                   {cert.title}
                 </h3>
                 
-                <p className="text-foreground/70 text-sm mb-4">
+                <p className="text-foreground/70 dark:text-white/70 text-sm mb-4">
                   Issued by {cert.issuer}
                 </p>
                 

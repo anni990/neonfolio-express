@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Twitter, FileCode2, Mail, Database } from 'lucide-react';
+import { Github, Linkedin, Twitter, FileCode2, Mail, Database, Brain } from 'lucide-react';
 
 const SocialLinks = () => {
   return (
@@ -10,7 +10,7 @@ const SocialLinks = () => {
           href="https://github.com" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125 social-icon"
           aria-label="GitHub"
         >
           <Github className="w-5 h-5" />
@@ -19,7 +19,7 @@ const SocialLinks = () => {
           href="https://linkedin.com" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125 social-icon"
           aria-label="LinkedIn"
         >
           <Linkedin className="w-5 h-5" />
@@ -28,7 +28,7 @@ const SocialLinks = () => {
           href="https://twitter.com" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125 social-icon"
           aria-label="Twitter"
         >
           <Twitter className="w-5 h-5" />
@@ -37,7 +37,7 @@ const SocialLinks = () => {
           href="mailto:hello@example.com" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125 social-icon"
           aria-label="Email"
         >
           <Mail className="w-5 h-5" />
@@ -46,13 +46,22 @@ const SocialLinks = () => {
           href="https://kaggle.com" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125 social-icon"
           aria-label="Kaggle"
         >
           <Database className="w-5 h-5" />
         </a>
+        <a 
+          href="https://huggingface.co" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-foreground/70 hover:text-code-blue transition-all duration-300 hover:scale-125 social-icon"
+          aria-label="Hugging Face"
+        >
+          <Brain className="w-5 h-5" />
+        </a>
       </div>
-      <div className="h-20 w-px bg-code-blue/30 mt-2"></div>
+      <div className="h-20 w-px bg-code-blue/30 mt-2 animate-pulse-light"></div>
     </div>
   );
 };

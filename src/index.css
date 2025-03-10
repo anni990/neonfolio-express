@@ -36,8 +36,38 @@
     --radius: 0.5rem;
   }
   
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 84% 55%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 160 58% 52%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 196 84% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 84% 55%;
+  }
+  
   * {
-    @apply border-border selection:bg-code-blue/20 selection:text-code-dark;
+    @apply border-border selection:bg-code-blue/20 selection:text-code-dark dark:selection:bg-code-blue/40 dark:selection:text-white;
   }
   
   body {
@@ -61,11 +91,11 @@
   }
 
   .glass-panel {
-    @apply backdrop-blur-lg bg-white/60 border border-white/20 shadow-lg;
+    @apply backdrop-blur-lg bg-white/60 border border-white/20 shadow-lg dark:bg-gray-900/60 dark:border-white/10;
   }
   
   .code-block {
-    @apply font-mono bg-code-terminal/5 rounded-md p-4 text-sm;
+    @apply font-mono bg-code-terminal/5 rounded-md p-4 text-sm dark:bg-code-terminal/20;
   }
   
   .text-balance {
@@ -94,7 +124,7 @@
   }
   
   .skill-bar {
-    @apply h-2 bg-code-blue/20 rounded-full overflow-hidden relative;
+    @apply h-2 bg-code-blue/20 rounded-full overflow-hidden relative dark:bg-code-blue/10;
   }
   
   .skill-bar::after {
@@ -112,11 +142,11 @@
   }
   
   .mesh-background {
-    @apply bg-mesh-grid bg-[length:30px_30px];
+    @apply bg-mesh-grid bg-[length:30px_30px] dark:opacity-20;
   }
   
   .blur-backdrop {
-    @apply backdrop-blur-xl bg-white/80;
+    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-900/80;
   }
   
   /* Enhanced animations */
@@ -140,5 +170,43 @@
   
   .pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* New hover effects */
+  .project-card {
+    @apply transition-all duration-500 hover:scale-[1.03] hover:shadow-xl;
+  }
+  
+  .project-card:hover .project-overlay {
+    @apply opacity-100;
+  }
+  
+  .project-card:hover img {
+    @apply scale-110;
+  }
+  
+  .cert-card {
+    @apply transition-all duration-500 hover:scale-[1.05] hover:shadow-xl hover:rotate-1;
+  }
+  
+  .cert-card:hover .cert-content {
+    @apply bg-code-green/10;
+  }
+  
+  .about-image {
+    @apply transition-all duration-700 hover:shadow-2xl hover:shadow-code-blue/20;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .about-image:hover {
+    animation-play-state: paused;
+  }
+  
+  .skill-icon {
+    @apply transition-all duration-300 hover:scale-125 hover:rotate-6 hover:shadow-lg hover:shadow-code-blue/30;
+  }
+  
+  .social-icon {
+    @apply transition-all duration-300 hover:scale-125 hover:text-code-blue;
   }
 }

@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Code, Menu, X } from 'lucide-react';
+import { Code, Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/hooks/useTheme';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,28 +88,55 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            
+            {/* Theme toggle button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-foreground/10 transition-colors"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5 text-code-blue hover:animate-spin" />
+              ) : (
+                <Moon className="h-5 w-5 text-code-blue hover:animate-spin" />
+              )}
+            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-code-dark p-2 rounded-full hover:bg-code-blue/10 transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </button>
+          {/* Mobile menu button and theme toggle for mobile */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-foreground/10 transition-colors"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5 text-code-blue" />
+              ) : (
+                <Moon className="h-5 w-5 text-code-blue" />
+              )}
+            </button>
+            
+            <button
+              className="text-code-dark p-2 rounded-full hover:bg-code-blue/10 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </nav>
       </div>
 
       {/* Mobile Navigation */}
       <div
         className={cn(
-          'fixed inset-0 top-[56px] z-40 bg-white/95 backdrop-blur-lg transform transition-transform duration-300 md:hidden',
+          'fixed inset-0 top-[56px] z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg transform transition-transform duration-300 md:hidden',
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >

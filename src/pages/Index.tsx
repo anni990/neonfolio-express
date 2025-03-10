@@ -9,6 +9,7 @@ import Skills from '@/components/sections/Skills';
 import Projects from '@/components/sections/Projects';
 import Certifications from '@/components/sections/Certifications';
 import Contact from '@/components/sections/Contact';
+import { ThemeProvider } from '@/hooks/useTheme';
 
 const Index = () => {
   useEffect(() => {
@@ -17,21 +18,23 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <SocialLinks />
-      
-      <main className="flex-grow">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Certifications />
-        <Contact />
-      </main>
-      
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <SocialLinks />
+        
+        <main className="flex-grow">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Certifications />
+          <Contact />
+        </main>
+        
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 

@@ -94,7 +94,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-24 px-6 md:px-16 lg:px-24 relative opacity-0"
+      className="py-24 px-6 md:px-16 lg:px-24 relative opacity-0 dark:bg-gray-900/30"
     >
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -116,16 +116,16 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl overflow-hidden shadow-md opacity-0 hover-card"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md opacity-0 project-card"
             >
-              <div className="aspect-video bg-code-blue/10 relative overflow-hidden">
+              <div className="aspect-video bg-code-blue/10 dark:bg-code-blue/5 relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 project-overlay transition-opacity duration-300 flex items-end">
                   <div className="p-6 w-full">
                     <div className="flex gap-3 mb-3">
                       {project.links.demo && (
@@ -158,11 +158,11 @@ const Projects = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="font-semibold text-xl mb-2 text-code-dark">
+                <h3 className="font-semibold text-xl mb-2 text-code-dark dark:text-white">
                   {project.title}
                 </h3>
                 
-                <p className="text-foreground/70 mb-4">
+                <p className="text-foreground/70 dark:text-white/70 mb-4">
                   {project.description}
                 </p>
                 
@@ -170,7 +170,7 @@ const Projects = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span 
                       key={tagIndex} 
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-code-blue/10 text-code-blue"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-code-blue/10 text-code-blue dark:bg-code-blue/20"
                     >
                       {tag}
                     </span>
@@ -184,7 +184,7 @@ const Projects = () => {
         <div className="text-center mt-12">
           <a 
             href="#"
-            className="inline-flex items-center px-6 py-3 rounded-lg border border-code-blue/30 text-code-blue font-medium transition-all hover:bg-code-blue/5 hover:border-code-blue"
+            className="inline-flex items-center px-6 py-3 rounded-lg border border-code-blue/30 text-code-blue font-medium transition-all hover:bg-code-blue/5 hover:border-code-blue dark:border-code-blue/50 dark:hover:bg-code-blue/10"
           >
             View All Projects
           </a>
