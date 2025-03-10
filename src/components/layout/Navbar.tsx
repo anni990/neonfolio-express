@@ -25,8 +25,10 @@ const Navbar = () => {
       const sections = document.querySelectorAll('section[id]');
       
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
+        // Cast Element to HTMLElement to access offsetTop and offsetHeight
+        const htmlSection = section as HTMLElement;
+        const sectionTop = htmlSection.offsetTop;
+        const sectionHeight = htmlSection.offsetHeight;
         
         if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
           setActiveSection(section.id);
