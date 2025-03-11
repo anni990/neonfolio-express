@@ -14,7 +14,7 @@ import { ThemeProvider } from '@/hooks/useTheme';
 const Index = () => {
   useEffect(() => {
     // Set page title
-    document.title = 'Developer Portfolio | Coding-Themed Design';
+    document.title = 'Aniket Kumar Mishra | Machine Learning Engineer';
   }, []);
 
   return (

@@ -53,24 +53,24 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
-          Hi, I'm <span className="text-code-blue">Developer</span>
+          Hi, I'm <span className="text-code-blue">ML Engineer</span>
           <br />
           I build <span className="relative">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-code-blue to-code-green">exceptional</span>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-code-blue to-code-green rounded-full opacity-30"></span>
-          </span> web experiences
+          </span> web experiences with AI
         </h1>
         
         <div className="mb-8 code-block inline-block text-left">
           <TerminalText
-            text="const skills = ['React', 'TypeScript', 'Node.js', 'UX Design'];"
-            className="text-code-dark"
+            text="const_skills = ['Python', 'Data Analysis', 'Machine Learning', 'UX Design']"
+            className="text-code-light"
           />
         </div>
         
         <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto">
-          A passionate full-stack developer building intuitive, robust, and beautiful digital experiences.
-        </p>
+          A passionate Machine Learning Engineer building intuitive, robust, and beautiful digital experiences with AI.
+        </p>  
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a 
