@@ -203,8 +203,8 @@ const Contact = () => {
               </div>
               
               <div className="code-block">
-                <pre className="font-mono text-sm text-code-dark">
-                  <code>{`// Let's connect\nconstStatus = "Open to opportunities";\nscheduleMeeting();`}</code>
+                <pre className="font-mono text-sm text-code">
+                  <code>{`# Let's connect\nconstStatus = "Open to opportunities"\nscheduleMeeting()`}</code>
                 </pre>
               </div>
             </div>
@@ -215,7 +215,7 @@ const Contact = () => {
             <form ref={formRef} onSubmit={handleSubmit} className="bg-white rounded-xl p-8 shadow-md glass-panel">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-code-dark mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-code-light mb-2">
                     Name
                   </label>
                   <input
@@ -226,7 +226,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       formErrors.name ? 'border-destructive/50' : 'border-code-blue/20'
-                    } focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all`}
+                    } focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all text-black dark:text-white bg-white dark:bg-gray-800`}
                     placeholder="Your Name"
                   />
                   {formErrors.name && (
@@ -235,7 +235,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-code-dark mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-code-light mb-2">
                     Email
                   </label>
                   <input
@@ -246,7 +246,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       formErrors.email ? 'border-destructive/50' : 'border-code-blue/20'
-                    } focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all`}
+                    } focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all text-black dark:text-white bg-white dark:bg-gray-800`}
                     placeholder="your@email.com"
                   />
                   {formErrors.email && (
@@ -256,7 +256,7 @@ const Contact = () => {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="subject" className="block text-sm font-medium text-code-dark mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-code-light mb-2">
                   Subject (Optional)
                 </label>
                 <input
@@ -265,13 +265,13 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-code-blue/20 focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-code-blue/20 focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all text-black dark:text-white bg-white dark:bg-gray-800"
                   placeholder="Project Inquiry"
                 />
               </div>
               
               <div className="mb-8">
-                <label htmlFor="message" className="block text-sm font-medium text-code-dark mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-code-light mb-2">
                   Message
                 </label>
                 <textarea
@@ -282,7 +282,7 @@ const Contact = () => {
                   rows={6}
                   className={`w-full px-4 py-3 rounded-lg border ${
                     formErrors.message ? 'border-destructive/50' : 'border-code-blue/20'
-                  } focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all resize-none`}
+                  } focus:outline-none focus:ring-2 focus:ring-code-blue/30 transition-all resize-none text-black dark:text-white bg-white dark:bg-gray-800`}
                   placeholder="Your message here..."
                 />
                 {formErrors.message && (

@@ -16,28 +16,28 @@ const Footer = () => {
           
           <div className="flex items-center gap-6">
             <a 
-              href="#" 
+              href="https://github.com/anni990" 
               aria-label="GitHub"
               className="text-foreground/70 hover:text-code-blue transition-colors dark:text-gray-300 dark:hover:text-code-blue"
             >
               <Github className="w-5 h-5" />
             </a>
             <a 
-              href="#" 
+              href="https://linkedin.com/in/anni990" 
               aria-label="LinkedIn"
               className="text-foreground/70 hover:text-code-blue transition-colors dark:text-gray-300 dark:hover:text-code-blue"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="#" 
+              href="https://twitter.com/anni990_" 
               aria-label="Twitter"
               className="text-foreground/70 hover:text-code-blue transition-colors dark:text-gray-300 dark:hover:text-code-blue"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:hello@example.com" 
+              href="mailto:aniket22mishra2004@gmail.com" 
               aria-label="Email"
               className="text-foreground/70 hover:text-code-blue transition-colors dark:text-gray-300 dark:hover:text-code-blue"
             >
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-code-blue/10 dark:border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-foreground/60 dark:text-gray-400">
-          <p>© {currentYear} Developer Portfolio. All rights reserved.</p>
+          <p>© {currentYear} Developer Portfolio made with ❤️ by Aniket Kumar Mishra. All rights reserved.</p>
           
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-code-blue transition-colors dark:hover:text-code-blue">Privacy Policy</a>
