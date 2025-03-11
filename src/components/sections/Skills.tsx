@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Code, Database, Globe, Layout, Radio, User, Cpu, LineChart, BarChart, Brain, Terminal, GitBranch, ThumbsUp } from 'lucide-react';
+import { Code, Database, Globe, Layout, Radio, User, Cpu, LineChart, BarChart, Brain, Terminal, GitBranch, ThumbsUp, FlaskConical, FlaskRound } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -11,7 +11,7 @@ interface Skill {
 const Skills = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
-  const [activeCategory, setActiveCategory] = useState<'frontend' | 'backend' | 'ml' | 'tools' | 'all'>('all');
+  const [activeCategory, setActiveCategory] = useState<'frontend' | 'backend' | 'ml' | 'tools' | 'all'>('ml');
 
   const skills: Skill[] = [
     // Frontend
@@ -20,19 +20,19 @@ const Skills = () => {
     { name: 'TypeScript', icon: <Terminal className="w-10 h-10" />, category: 'frontend' },
     { name: 'React', icon: <Radio className="w-10 h-10" />, category: 'frontend' },
     { name: 'Tailwind CSS', icon: <ThumbsUp className="w-10 h-10" />, category: 'frontend' },
-    { name: 'Vue.js', icon: <Globe className="w-10 h-10" />, category: 'frontend' },
+    // { name: 'Vue.js', icon: <Globe className="w-10 h-10" />, category: 'frontend' },
     
     // Backend
     { name: 'Node.js', icon: <Terminal className="w-10 h-10" />, category: 'backend' },
-    { name: 'Express', icon: <Radio className="w-10 h-10" />, category: 'backend' },
-    { name: 'MongoDB', icon: <Database className="w-10 h-10" />, category: 'backend' },
+    // { name: 'Express', icon: <Radio className="w-10 h-10" />, category: 'backend' },
+    // { name: 'MongoDB', icon: <Database className="w-10 h-10" />, category: 'backend' },
     { name: 'SQL', icon: <Database className="w-10 h-10" />, category: 'backend' },
-    { name: 'GraphQL', icon: <Globe className="w-10 h-10" />, category: 'backend' },
+    { name: 'Flask', icon: <Code className="w-10 h-10" />, category: 'backend' },
     { name: 'Python', icon: <Code className="w-10 h-10" />, category: 'backend' },
     
     // Machine Learning
     { name: 'Machine Learning', icon: <Brain className="w-10 h-10" />, category: 'ml' },
-    { name: 'TensorFlow', icon: <Cpu className="w-10 h-10" />, category: 'ml' },
+    { name: 'Scikit-learn', icon: <Cpu className="w-10 h-10" />, category: 'ml' },
     { name: 'PyTorch', icon: <Brain className="w-10 h-10" />, category: 'ml' },
     { name: 'Data Analysis', icon: <BarChart className="w-10 h-10" />, category: 'ml' },
     { name: 'Pandas', icon: <LineChart className="w-10 h-10" />, category: 'ml' },
@@ -41,10 +41,10 @@ const Skills = () => {
     // Tools & Others
     { name: 'Git', icon: <GitBranch className="w-10 h-10" />, category: 'tools' },
     { name: 'Docker', icon: <Database className="w-10 h-10" />, category: 'tools' },
-    { name: 'CI/CD', icon: <Radio className="w-10 h-10" />, category: 'tools' },
-    { name: 'AWS', icon: <Database className="w-10 h-10" />, category: 'tools' },
-    { name: 'Figma', icon: <Layout className="w-10 h-10" />, category: 'tools' },
-    { name: 'Testing', icon: <ThumbsUp className="w-10 h-10" />, category: 'tools' },
+    // { name: 'CI/CD', icon: <Radio className="w-10 h-10" />, category: 'tools' },
+    { name: 'Azure', icon: <Database className="w-10 h-10" />, category: 'tools' },
+    // { name: 'Figma', icon: <Layout className="w-10 h-10" />, category: 'tools' },
+    // { name: 'Testing', icon: <ThumbsUp className="w-10 h-10" />, category: 'tools' },
   ];
 
   useEffect(() => {
@@ -116,7 +116,7 @@ const Skills = () => {
               }`}
               onClick={() => setActiveCategory(category as any)}
             >
-              {category === 'ml' ? 'Machine Learning' : category.charAt(0).toUpperCase() + category.slice(1)}
+              {category === 'ml' ? 'Data Science' : category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
           ))}
         </div>
