@@ -105,10 +105,9 @@ const Contact = () => {
     
     // Send email using EmailJS
     emailjs.send(
-      'service_4jt0r9t', // Replace with your EmailJS service ID
-      'template_6laq5ih', // Replace with your EmailJS template ID
-      templateParams,
-      'YznXVwQDGmLILsdcw' // Replace with your EmailJS user ID
+      'service_4jt0r9t', // Your EmailJS service ID
+      'template_6laq5ih', // Your EmailJS template ID
+      templateParams
     )
     .then(() => {
       setIsSubmitting(false);
@@ -131,9 +130,16 @@ const Contact = () => {
       console.error('Email sending failed:', error);
       setIsSubmitting(false);
       
+      let errorMessage = 'There was an error sending your message. Please try again later.';
+      
+      // Check for specific EmailJS errors
+      if (error.text && error.text.includes('Invalid grant')) {
+        errorMessage = 'Email service authentication error. Please try again later or contact the site owner.';
+      }
+      
       toast({
         title: 'Message Failed',
-        description: 'There was an error sending your message. Please try again later.',
+        description: errorMessage,
         variant: 'destructive',
       });
     });
