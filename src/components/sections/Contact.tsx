@@ -103,10 +103,10 @@ const Contact = () => {
     
     // Send email using EmailJS
     emailjs.send(
-      'service_pnk3wlq', // Replace with your EmailJS service ID
-      'template_r1fv9om', // Replace with your EmailJS template ID
+      'service_4jt0r9t', // Replace with your EmailJS service ID
+      'template_6laq5ih', // Replace with your EmailJS template ID
       templateParams,
-      'z9Aa7e_YaH6JWk7WW' // Replace with your EmailJS user ID
+      'YznXVwQDGmLILsdcw' // Replace with your EmailJS user ID
     )
     .then(() => {
       setIsSubmitting(false);
