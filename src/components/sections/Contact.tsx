@@ -4,6 +4,9 @@ import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from 'emailjs-com';
 
+// Initialize EmailJS with your User ID
+emailjs.init("z9Aa7e_YaH6JWk7WW");
+
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -98,7 +101,6 @@ const Contact = () => {
       subject: formData.subject || "Message from Portfolio Contact Form",
       message: formData.message,
       reply_to: formData.email,
-      to_email: "aniket22mishra2004@gmail.com" // Your email address
     };
     
     // Send email using EmailJS
@@ -110,8 +112,6 @@ const Contact = () => {
     )
     .then(() => {
       setIsSubmitting(false);
-      
-      // Show success modal
       setShowSuccessModal(true);
       
       // Reset form
