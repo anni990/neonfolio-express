@@ -5,7 +5,7 @@ import { useToast } from '@/hooks/use-toast';
 import emailjs from 'emailjs-com';
 
 // Initialize EmailJS with your User ID
-emailjs.init("z9Aa7e_YaH6JWk7WW");
+emailjs.init("YznXVwQDGmLILsdcw");
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
