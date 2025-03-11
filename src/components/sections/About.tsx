@@ -74,8 +74,8 @@ const About = () => {
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-24 h-24 border border-code-blue/20 rounded-xl rotate-6 animate-float dark:border-code-blue/30" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-code-green/20 rounded-xl -rotate-6 animate-float dark:border-code-green/30" style={{ animationDelay: '1s' }} />
+              <div className="absolute -top-6 -left-6 w-24 h-24 border border-code-blue/100 rounded-xl rotate-6 animate-float dark:border-code-blue/100" style={{ animationDelay: '0.5s' }} />
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-code-green/100 rounded-xl -rotate-6 animate-float dark:border-code-green/100" style={{ animationDelay: '1s' }} />
               
               {/* Code snippet */}
               <div className="absolute -bottom-8 -left-4 md:-left-12 glass-panel px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-code-blue/5 dark:bg-gray-800/90 dark:border-white/10 dark:hover:bg-code-blue/10">
