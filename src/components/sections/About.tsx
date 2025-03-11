@@ -60,10 +60,17 @@ const About = () => {
           {/* Left column - Photo */}
           <div className="md:w-2/5 relative" ref={imageRef}>
             <div className="relative">
-              <div className="aspect-[4/5] bg-gradient-to-br from-code-blue/40 to-code-green/40 rounded-2xl overflow-hidden glass-panel about-image pulse-glow dark:from-code-blue/30 dark:to-code-green/30 dark:border-white/10">
-                <div className="absolute inset-0 flex items-center justify-center text-white/30 font-mono text-sm">
-                  [Your Photo Here]
-                </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden glass-panel about-image pulse-glow">
+                <img 
+                  src="/images/developer-portrait.jpg" 
+                  alt="Developer portrait" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1649972904349-6e44c42644a7";
+                    target.onerror = null; // Prevent infinite loop if fallback also fails
+                  }}
+                />
               </div>
               
               {/* Decorative elements */}
