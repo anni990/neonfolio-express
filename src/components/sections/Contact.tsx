@@ -1,7 +1,8 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Mail, MessageSquare, Send } from 'lucide-react';
+import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -22,6 +23,7 @@ const Contact = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,9 +91,28 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Prepare email template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject || "Message from Portfolio Contact Form",
+      message: formData.message,
+      reply_to: formData.email,
+      to_email: "aniket22mishra2004@gmail.com" // Your email address
+    };
+    
+    // Send email using EmailJS
+    emailjs.send(
+      'service_pnk3wlq', // Replace with your EmailJS service ID
+      'template_r1fv9om', // Replace with your EmailJS template ID
+      templateParams,
+      'z9Aa7e_YaH6JWk7WW' // Replace with your EmailJS user ID
+    )
+    .then(() => {
       setIsSubmitting(false);
+      
+      // Show success modal
+      setShowSuccessModal(true);
       
       // Reset form
       setFormData({
@@ -101,13 +122,21 @@ const Contact = () => {
         message: '',
       });
       
-      // Show success message
+      // Hide success modal after 3 seconds
+      setTimeout(() => {
+        setShowSuccessModal(false);
+      }, 3000);
+    })
+    .catch((error) => {
+      console.error('Email sending failed:', error);
+      setIsSubmitting(false);
+      
       toast({
-        title: 'Message Sent!',
-        description: 'Thank you for your message. I will get back to you soon.',
-        variant: 'default',
+        title: 'Message Failed',
+        description: 'There was an error sending your message. Please try again later.',
+        variant: 'destructive',
       });
-    }, 1500);
+    });
   };
 
   return (
@@ -116,6 +145,29 @@ const Contact = () => {
       ref={sectionRef}
       className="py-24 px-6 md:px-16 lg:px-24 relative opacity-0"
     >
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm transition-all">
+          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 transform animate-scale-in">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 animate-bounce-light">
+                <CheckCircle2 className="w-12 h-12 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+              <p className="text-gray-600 mb-6">
+                Thank you for reaching out. I'll get back to you as soon as possible.
+              </p>
+              <button
+                onClick={() => setShowSuccessModal(false)}
+                className="px-6 py-2 bg-code-blue text-white rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="container max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left column - Contact Info */}
@@ -140,7 +192,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <a href="mailto:hello@example.com" className="text-code-blue hover:underline">hello@example.com</a>
+                  <a href="mailto:aniket22mishra2004@gmail.com" className="text-code-blue hover:underline">aniket22mishra2004@gmail.com</a>
                 </div>
               </div>
               
