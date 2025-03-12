@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -191,6 +190,18 @@
   
   .cert-card:hover .cert-content {
     @apply bg-code-green/10;
+  }
+  
+  .research-card {
+    @apply transition-all duration-500 hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-code-green/20;
+  }
+  
+  .research-card:hover img {
+    @apply scale-110;
+  }
+  
+  .research-card:hover .project-overlay {
+    @apply opacity-100;
   }
   
   .about-image {
