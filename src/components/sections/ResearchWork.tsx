@@ -24,7 +24,7 @@ const ResearchWork = () => {
     {
       title: 'Natural Language Processing in Healthcare',
       description: 'Research on applying transformer models to clinical text analysis for automated disease classification and medical report generation.',
-      image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69',
+      image: 'https://images.unsplash.com/photo-1576671081837-49000212a370',
       date: 'Jun 2022 - Dec 2022',
       link: '#',
     },
