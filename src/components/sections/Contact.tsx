@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, MessageSquare, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from 'emailjs-com';
 
@@ -120,11 +120,6 @@ const Contact = () => {
         subject: '',
         message: '',
       });
-      
-      // Hide success modal after 3 seconds
-      setTimeout(() => {
-        setShowSuccessModal(false);
-      }, 3000);
     })
     .catch((error) => {
       console.error('Email sending failed:', error);
@@ -134,7 +129,7 @@ const Contact = () => {
       
       // Check for specific EmailJS errors
       if (error.text && error.text.includes('Invalid grant')) {
-        errorMessage = 'Email service authentication error. Please try again later or contact the site owner.';
+        errorMessage = 'Gmail API authentication error. Please reconnect your Gmail account in EmailJS dashboard.';
       }
       
       toast({
@@ -151,21 +146,39 @@ const Contact = () => {
       ref={sectionRef}
       className="py-24 px-6 md:px-16 lg:px-24 relative opacity-0"
     >
-      {/* Success Modal */}
+      {/* Creative Success Modal */}
       {showSuccessModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm transition-all">
-          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 transform animate-scale-in">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 transform animate-scale-in">
             <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 animate-bounce-light">
-                <CheckCircle2 className="w-12 h-12 text-green-600" />
+              {/* Animated success icon container with continuous zoom animation */}
+              <div className="relative mb-6">
+                {/* Outer sparkle effects */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Sparkles className="w-24 h-24 text-green-400 animate-pulse opacity-50" />
+                </div>
+                
+                {/* Pulsing background circles */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-green-100 animate-ping opacity-30"></div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-green-200 animate-ping opacity-50 animation-delay-300"></div>
+                </div>
+                
+                {/* Main success icon with zoom animation */}
+                <div className="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center relative z-10">
+                  <CheckCircle2 className="w-16 h-16 text-green-600 animate-[zoom_2s_ease-in-out_infinite]" />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-              <p className="text-gray-600 mb-6">
+              
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Thank you for reaching out. I'll get back to you as soon as possible.
               </p>
               <button
                 onClick={() => setShowSuccessModal(false)}
-                className="px-6 py-2 bg-code-blue text-white rounded-lg hover:bg-blue-600 transition-colors"
+                className="px-6 py-2 bg-code-blue text-white rounded-lg hover:bg-blue-600 transition-colors hover:scale-105 transform duration-200"
               >
                 Close
               </button>
