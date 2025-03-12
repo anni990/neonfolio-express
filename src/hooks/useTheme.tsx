@@ -9,21 +9,20 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
+  theme: 'dark', // Changed default to dark
   toggleTheme: () => {},
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark'); // Changed default to dark
 
   useEffect(() => {
     // Check if user has a theme preference stored
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     
-    // Check for system preference if no saved theme
+    // If no saved theme, use dark as default
     if (!savedTheme) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      setTheme('dark');
       return;
     }
     
@@ -37,7 +36,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     
     // Save the theme preference
     localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));

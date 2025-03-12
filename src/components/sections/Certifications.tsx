@@ -19,28 +19,28 @@ const Certifications = () => {
       title: 'Full Stack Web Development',
       issuer: 'Udacity',
       date: 'Jan 2023',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
       link: '#',
     },
     {
       title: 'Advanced React & Redux',
       issuer: 'Udemy',
       date: 'Mar 2023',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
       link: '#',
     },
     {
       title: 'AWS Certified Developer',
       issuer: 'Amazon Web Services',
       date: 'Jun 2023',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
       link: '#',
     },
     {
       title: 'UI/UX Design Fundamentals',
       issuer: 'Interaction Design Foundation',
       date: 'Aug 2023',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
       link: '#',
     },
   ];
@@ -113,6 +113,11 @@ const Certifications = () => {
                   src={cert.image} 
                   alt={cert.title} 
                   className="w-full h-full object-cover animate-float"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"; // Fallback image
+                    target.onerror = null; // Prevent infinite loop if fallback also fails
+                  }}
                 />
               </div>
               

@@ -17,11 +17,12 @@ const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   
+  // Updated projects with random relevant fallback images
   const projects: Project[] = [
     {
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce platform with product listing, cart functionality, and payment integration.',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5',
       tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
       links: {
         demo: '#',
@@ -31,7 +32,7 @@ const Projects = () => {
     {
       title: 'Task Management App',
       description: 'A comprehensive task management application with real-time updates and team collaboration features.',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
       tags: ['Vue.js', 'Firebase', 'Tailwind CSS', 'TypeScript'],
       links: {
         demo: '#',
@@ -41,7 +42,7 @@ const Projects = () => {
     {
       title: 'Weather Dashboard',
       description: 'An interactive weather dashboard with location-based forecasts and historical data visualization.',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
       tags: ['React', 'Redux', 'Chart.js', 'Weather API'],
       links: {
         demo: '#',
@@ -51,7 +52,7 @@ const Projects = () => {
     {
       title: 'Portfolio Website',
       description: 'A modern portfolio website with smooth animations and responsive design.',
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
       tags: ['React', 'Tailwind CSS', 'Framer Motion'],
       links: {
         demo: '#',
@@ -123,6 +124,11 @@ const Projects = () => {
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1531297484001-80022131f5a1"; // Fallback image
+                    target.onerror = null; // Prevent infinite loop if fallback also fails
+                  }}
                 />
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 project-overlay transition-opacity duration-300 flex items-end">
