@@ -53,7 +53,7 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
-          Hi, I'm <span className="text-code-blue">ML Engineer</span>
+          Hi, I'm <span className="text-code-blue">Aniket Kumar Mishra</span>
           <br />
           I build <span className="relative">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-code-blue to-code-green">exceptional</span>
