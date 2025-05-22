@@ -16,31 +16,31 @@ const Certifications = () => {
   
   const certifications: Certification[] = [
     {
-      title: 'Full Stack Web Development',
-      issuer: 'Udacity',
-      date: 'Jan 2023',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+      title: '3rd Position at 1BRC challenge IIT BHU Techfest',
+      issuer: 'IIT BHU',
+      date: 'March 2025',
+      image: 'images/1brc.png',
       link: '#',
     },
     {
-      title: 'Advanced React & Redux',
-      issuer: 'Udemy',
-      date: 'Mar 2023',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+      title: 'Successfully complete NPTEL - Python for Data Science course by 90%',
+      issuer: 'NPTEL',
+      date: 'AUG 2024',
+      image: 'images/nptel.png',
       link: '#',
     },
     {
-      title: 'AWS Certified Developer',
-      issuer: 'Amazon Web Services',
-      date: 'Jun 2023',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+      title: '2nd runner-up in IBM skill build program IoT at SageUtsav ',
+      issuer: 'SIRT',
+      date: 'Jan 2025',
+      image: 'images/ibm-iot.jpg',
       link: '#',
     },
     {
-      title: 'UI/UX Design Fundamentals',
-      issuer: 'Interaction Design Foundation',
-      date: 'Aug 2023',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+      title: '1st runner-up at IIT bombay techfest zonal round in meshmerize',
+      issuer: 'IIT bombay',
+      date: 'Dec 2024',
+      image: 'images/bombay-techfest.jpg',
       link: '#',
     },
   ];
@@ -91,7 +91,7 @@ const Certifications = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Professional Certifications
+            Achievements and Certifications
           </h2>
           
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
