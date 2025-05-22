@@ -15,16 +15,16 @@ const ResearchWork = () => {
   
   const researchWorks: Research[] = [
     {
-      title: 'Deep Learning for Medical Image Analysis',
-      description: 'Developed novel deep learning architectures for medical image segmentation and classification, achieving state-of-the-art results on brain tumor detection.',
-      image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d',
-      date: 'Jan 2023 - Present',
+      title: 'Predictive modelling for Cardiovascular Diagnosis using Machine Learning',
+      description: 'This study explored different machine learning models for predicting heart disease. Among them, Random Forest proved to be the most effective, striking a balance between accuracy and reliability.',
+      image: 'images/heart-research-poster.png',
+      date: 'Sep 2024 - Present',
       link: '#',
     },
     {
-      title: 'Natural Language Processing in Healthcare',
-      description: 'Research on applying transformer models to clinical text analysis for automated disease classification and medical report generation.',
-      image: 'https://images.unsplash.com/photo-1576671081837-49000212a370',
+      title: 'Support Vector Machine for Predicting Cardiovascular Dieases',
+      description: 'Our findings underscore the remarkable performance of SVM, achieving an impressive accuracy of 97.53%, with sensitivity and specificity rates of 97.50% and 94.94%, respectively, in heart disease detection.',
+      image: 'images/CopyRight.jpg',
       date: 'Jun 2022 - Dec 2022',
       link: '#',
     },
@@ -76,7 +76,7 @@ const ResearchWork = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Academic Research & Publications
+            Academic Research & Code CopyRight
           </h2>
           
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
