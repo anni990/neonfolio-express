@@ -20,39 +20,39 @@ const Projects = () => {
   // Updated projects with random relevant fallback images
   const projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform with product listing, cart functionality, and payment integration.',
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
+      title: 'GreenSathi - Krishi Guru',
+      description: 'A platform where farmers can communication with chabot in multiple languages, Analysis plant images, Soil report and Mandi Data with weather analysis.',
+      image: 'images/GreenSathi-new.png',
+      tags: ['LLM', 'Machine Learning', 'MySQL', 'Javascript', 'Python', 'Flask'],
       links: {
         demo: '#',
         github: '#',
       },
     },
     {
-      title: 'Task Management App',
-      description: 'A comprehensive task management application with real-time updates and team collaboration features.',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-      tags: ['Vue.js', 'Firebase', 'Tailwind CSS', 'TypeScript'],
+      title: 'Renewable Energy Forecasting',
+      description: 'A Problem state by NTCP(govt. orgnaization) to predict the generation of energy by wind and solar plant in next upcoming days.',
+      image: 'images/Renewable.png',
+      tags: ['HTML', 'MySQL', 'Python-Flask', 'Machine Learning Models'],
       links: {
         demo: '#',
-        github: '#',
+        github: 'https://github.com/anni990/AI-Renewable-energy-forcasting',
       },
     },
     {
-      title: 'Weather Dashboard',
-      description: 'An interactive weather dashboard with location-based forecasts and historical data visualization.',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-      tags: ['React', 'Redux', 'Chart.js', 'Weather API'],
+      title: 'Morph-AI Food waste Reduction Platform',
+      description: 'A platform for caters who provide food service can use to reduce food waste by predicting the meal and diners.',
+      image: 'images/Morphai.png',
+      tags: ['Python-flask', 'Machine Learning', 'HTML'],
       links: {
         demo: '#',
-        github: '#',
+        github: 'https://github.com/anni990/My-Public-Minor-Project',
       },
     },
     {
       title: 'Portfolio Website',
       description: 'A modern portfolio website with smooth animations and responsive design.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+      image: 'images/portfolio-img.png',
       tags: ['React', 'Tailwind CSS', 'Framer Motion'],
       links: {
         demo: '#',
