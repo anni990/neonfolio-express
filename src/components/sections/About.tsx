@@ -12,7 +12,7 @@ const About = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
-          
+
           if (contentRef.current) {
             const children = contentRef.current.children;
             Array.from(children).forEach((child, index) => {
@@ -61,9 +61,9 @@ const About = () => {
           <div className="md:w-2/5 relative" ref={imageRef}>
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden glass-panel about-image pulse-glow">
-                <img 
-                  src="/images/developer-portrait.jpg" 
-                  alt="Developer portrait" 
+                <img
+                  src="/images/developer-portrait.jpg"
+                  alt="Developer portrait"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
@@ -72,11 +72,11 @@ const About = () => {
                   }}
                 />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-6 -left-6 w-24 h-24 border border-code-blue/100 rounded-xl rotate-6 animate-float dark:border-code-blue/100" style={{ animationDelay: '0.5s' }} />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-code-green/100 rounded-xl -rotate-6 animate-float dark:border-code-green/100" style={{ animationDelay: '1s' }} />
-              
+
               {/* Code snippet */}
               <div className="absolute -bottom-8 -left-4 md:-left-12 glass-panel px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-code-blue/5 dark:bg-gray-800/90 dark:border-white/10 dark:hover:bg-code-blue/10">
                 <pre className="text-xs md:text-sm font-mono text-code-dark dark:text-white">
@@ -85,25 +85,28 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Right column - Content */}
           <div className="md:w-3/5" ref={contentRef}>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-code-blue/10 text-code-blue mb-6 opacity-0 dark:bg-code-blue/20">
               <span className="text-sm font-medium">About Me</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 dark:text-white">
               Creating digital experiences with precision and purpose
             </h2>
-            
+
             <p className="text-lg text-foreground/80 dark:text-white/80 mb-6 opacity-0">
-              I'm a passionate full-stack developer with a strong focus on creating intuitive and efficient web applications. With a background in both frontend and backend technologies, I bring a holistic approach to every project.
+              I am B.Tech student specializing in Artificial Intelligence and Machine Learning,
+              excels in languages like HTML, CSS, C/C++, Python With hands-on experience in projects like Renewable Energy Forecasting, Green Sathi - Krishi Guru and Movie Recommendation System and
+              some webscapping mini projects. It demonstrates expertise in data preprocessing, data analysis
+              and Problem Solving Ideas.
             </p>
-            
-            <p className="text-lg text-foreground/80 dark:text-white/80 mb-10 opacity-0">
+
+            {/* <p className="text-lg text-foreground/80 dark:text-white/80 mb-10 opacity-0">
               My journey in development began with a curiosity about how things work, which evolved into a love for building elegant solutions to complex problems. I believe in clean code, user-centric design, and continuous learning.
-            </p>
-            
+            </p> */}
+
             <div className="mb-10 opacity-0">
               <h3 className="text-xl font-semibold mb-4 dark:text-white">Interests & Expertise</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -117,9 +120,9 @@ const About = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="opacity-0">
-              <a 
+              <a
                 href="#contact"
                 className="inline-flex items-center px-6 py-3 rounded-lg bg-code-blue text-white font-medium transition-all hover:shadow-lg hover:shadow-code-blue/20 hover:translate-y-[-2px] group dark:hover:shadow-code-blue/40"
                 onClick={(e) => {
