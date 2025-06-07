@@ -9,7 +9,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  base: '/neonfolio-express/',
+  base: '/',
   build: {
     outDir: 'dist', // Ensures proper output folder
   }
