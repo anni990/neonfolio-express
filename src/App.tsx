@@ -21,7 +21,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="/neonfolio-express">
+          <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="*" element={<NotFound />} />

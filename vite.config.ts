@@ -9,8 +9,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  base: '/',
+  base: './',
   build: {
-    outDir: 'dist', // Ensures proper output folder
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   }
 });
