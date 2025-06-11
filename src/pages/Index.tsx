@@ -9,6 +9,7 @@ import Projects from '@/components/sections/Projects';
 import ResearchWork from '@/components/sections/ResearchWork';
 import Certifications from '@/components/sections/Certifications';
 import Contact from '@/components/sections/Contact';
+import Internships from '@/components/sections/Internships';
 
 const Index = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Index = () => {
         <About />
         <Skills />
         <Projects />
+        <Internships />
         <ResearchWork />
         <Certifications />
         <Contact />

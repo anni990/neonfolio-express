@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import TerminalText from '@/components/ui/TerminalText';
 import { ArrowDown, Code, Terminal } from 'lucide-react';
@@ -85,14 +84,11 @@ const Hero = () => {
           </a>
           
           <a 
-            href="#contact"
+            href="/resume/Aniket Kumar Mishra resume.pdf"
+            download="Aniket Kumar Mishra Resume.pdf"
             className="px-8 py-3 rounded-lg border border-code-blue/30 text-code-blue font-medium transition-all hover:bg-code-blue/5 hover:border-code-blue"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
           >
-            Contact Me
+            Download Resume
           </a>
         </div>
       </div>
