@@ -1,6 +1,6 @@
-
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Award, Calendar, ExternalLink } from 'lucide-react';
+import CertificateModal from '../modals/CertificateModal';
 
 interface Certification {
   title: string;
@@ -13,6 +13,7 @@ interface Certification {
 const Certifications = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const certsRef = useRef<HTMLDivElement>(null);
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
   
   const certifications: Certification[] = [
     {
@@ -115,13 +116,13 @@ const Certifications = () => {
                   className="w-full h-full object-cover animate-float"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"; // Fallback image
-                    target.onerror = null; // Prevent infinite loop if fallback also fails
+                    target.src = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5";
+                    target.onerror = null;
                   }}
                 />
               </div>
               
-              <div className="p-6 flex-1 flex flex-col cert-content transition-colors duration-300">
+              <div className="p-6 flex-grow">
                 <div className="flex items-center text-xs text-foreground/50 dark:text-white/50 mb-2">
                   <Calendar className="w-3 h-3 mr-1" />
                   <span>{cert.date}</span>
@@ -136,23 +137,26 @@ const Certifications = () => {
                 </p>
                 
                 <div className="mt-auto">
-                  {cert.link && (
-                    <a 
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-code-blue hover:text-code-blue/80 transition-colors"
-                    >
-                      View Certificate
-                      <ExternalLink className="w-3 h-3 ml-1" />
-                    </a>
-                  )}
+                  <button 
+                    onClick={() => setSelectedCert(cert)}
+                    className="inline-flex items-center text-sm text-code-blue hover:text-code-blue/80 transition-colors"
+                  >
+                    View Certificate
+                    <ExternalLink className="w-3 h-3 ml-1" />
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <CertificateModal
+        isOpen={!!selectedCert}
+        onClose={() => setSelectedCert(null)}
+        imageUrl={selectedCert?.image || ''}
+        title={selectedCert?.title || ''}
+      />
     </section>
   );
 };
