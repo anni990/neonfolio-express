@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import AllProjects from './pages/AllProjects';
+import CopyrightSearch from './pages/CopyrightSearch';
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/useTheme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -19,6 +20,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<AllProjects />} />
+            <Route path="/copyright-search" element={<CopyrightSearch />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
