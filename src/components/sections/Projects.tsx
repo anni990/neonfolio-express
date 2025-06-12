@@ -1,12 +1,15 @@
-
 import React, { useRef, useEffect, useState } from 'react';
-import { ExternalLink, Github, Layers } from 'lucide-react';
+import { ExternalLink, Github, Layers, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import ProjectModal from '../modals/ProjectModal';
 
 interface Project {
   title: string;
   description: string;
   image: string;
+  images?: string[];
   tags: string[];
+  purpose?: string;
   links: {
     demo?: string;
     github?: string;
@@ -16,6 +19,7 @@ interface Project {
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   // Updated projects with random relevant fallback images
   const projects: Project[] = [
@@ -23,7 +27,9 @@ const Projects = () => {
       title: 'GreenSathi - Krishi Guru',
       description: 'A platform where farmers can communication with chabot in multiple languages, Analysis plant images, Soil report and Mandi Data with weather analysis.',
       image: 'images/GreenSathi-new.png',
+      images: ['images/GreenSathi-1.png', 'images/GreenSathi-2.png'],
       tags: ['LLM', 'Machine Learning', 'MySQL', 'Javascript', 'Python', 'Flask'],
+      purpose: 'To help farmers make better decisions about their crops and farming practices using AI and data analysis.',
       links: {
         demo: '#',
         github: '#',
@@ -33,7 +39,9 @@ const Projects = () => {
       title: 'Renewable Energy Forecasting',
       description: 'A Problem state by NTCP(govt. orgnaization) to predict the generation of energy by wind and solar plant in next upcoming days.',
       image: 'images/Renewable.png',
+      images: ['images/Renewable-1.png', 'images/Renewable-2.png'],
       tags: ['HTML', 'MySQL', 'Python-Flask', 'Machine Learning Models'],
+      purpose: 'To accurately predict renewable energy generation for better grid management and resource allocation.',
       links: {
         demo: '#',
         github: 'https://github.com/anni990/AI-Renewable-energy-forcasting',
@@ -43,7 +51,9 @@ const Projects = () => {
       title: 'Morph-AI Food waste Reduction Platform',
       description: 'A platform for caters who provide food service can use to reduce food waste by predicting the meal and diners.',
       image: 'images/Morphai.png',
+      images: ['images/Morphai-1.png', 'images/Morphai-2.png'],
       tags: ['Python-flask', 'Machine Learning', 'HTML'],
+      purpose: 'To help food service providers reduce waste and optimize their operations using AI predictions.',
       links: {
         demo: '#',
         github: 'https://github.com/anni990/My-Public-Minor-Project',
@@ -53,10 +63,12 @@ const Projects = () => {
       title: 'Portfolio Website',
       description: 'A modern portfolio website with smooth animations and responsive design.',
       image: 'images/portfolio-img.png',
+      images: ['images/portfolio-1.png', 'images/portfolio-2.png'],
       tags: ['React', 'Tailwind CSS', 'Framer Motion'],
+      purpose: 'To showcase my work and skills in an engaging and professional manner.',
       links: {
         demo: '#',
-        github: '#',
+        github: 'https://github.com/anni990/neonfolio-express',
       },
     },
   ];
@@ -91,6 +103,14 @@ const Projects = () => {
     };
   }, []);
 
+  const handleProjectClick = (project: Project, e: React.MouseEvent) => {
+    // Don't open modal if clicking on demo/github links
+    if ((e.target as HTMLElement).closest('a')) {
+      return;
+    }
+    setSelectedProject(project);
+  };
+
   return (
     <section
       id="projects"
@@ -117,7 +137,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md opacity-0 project-card"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md opacity-0 project-card cursor-pointer"
+              onClick={(e) => handleProjectClick(project, e)}
             >
               <div className="aspect-video bg-code-blue/10 dark:bg-code-blue/5 relative overflow-hidden">
                 <img 
@@ -126,8 +147,8 @@ const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-500"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1531297484001-80022131f5a1"; // Fallback image
-                    target.onerror = null; // Prevent infinite loop if fallback also fails
+                    target.src = "https://images.unsplash.com/photo-1531297484001-80022131f5a1";
+                    target.onerror = null;
                   }}
                 />
                 
@@ -172,7 +193,7 @@ const Projects = () => {
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2">
+                {/* <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span 
                       key={tagIndex} 
@@ -181,21 +202,34 @@ const Projects = () => {
                       {tag}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <a 
-            href="#"
-            className="inline-flex items-center px-6 py-3 rounded-lg border border-code-blue/30 text-code-blue font-medium transition-all hover:bg-code-blue/5 hover:border-code-blue dark:border-code-blue/50 dark:hover:bg-code-blue/10"
+
+        {/* View All Projects Button */}
+        <div className="text-center mt-16">
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-code-blue text-white hover:bg-code-blue/90 transition-colors"
           >
             View All Projects
-          </a>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
+
+      <ProjectModal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        project={selectedProject || {
+          title: '',
+          description: '',
+          image: '',
+          tags: [],
+        }}
+      />
     </section>
   );
 };

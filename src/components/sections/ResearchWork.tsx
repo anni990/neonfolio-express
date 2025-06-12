@@ -19,14 +19,14 @@ const ResearchWork = () => {
       description: 'This study explored different machine learning models for predicting heart disease. Among them, Random Forest proved to be the most effective, striking a balance between accuracy and reliability.',
       image: 'images/heart-research-poster.png',
       date: 'Sep 2024 - Present',
-      link: '#',
+      link: '/pdf/Heart-Diseases-research-paper.pdf',
     },
     {
       title: 'Support Vector Machine for Predicting Cardiovascular Dieases',
       description: 'Our findings underscore the remarkable performance of SVM, achieving an impressive accuracy of 97.53%, with sensitivity and specificity rates of 97.50% and 94.94%, respectively, in heart disease detection.',
       image: 'images/CopyRight.jpg',
       date: 'Jun 2022 - Dec 2022',
-      link: '#',
+      link: '/pdf/Heart-Diseases-research-paper.pdf',
     },
   ];
 
@@ -129,7 +129,7 @@ const ResearchWork = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-code-green hover:text-code-green/80 transition-colors"
                   >
-                    View Publication
+                    View Paper
                     <ExternalLink className="w-4 h-4 ml-1" />
                   </a>
                 )}
