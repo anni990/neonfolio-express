@@ -62,7 +62,7 @@ const About = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden glass-panel about-image pulse-glow">
                 <img
-                  src="/images/developer-portrait.jpg"
+                  src="/images/my/Aniket Kumar Mishra Profile Photo New 7-Photoroom.jpg"
                   alt="Developer portrait"
                   className="w-full h-full object-cover"
                   onError={(e) => {
