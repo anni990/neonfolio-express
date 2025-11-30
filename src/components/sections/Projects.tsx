@@ -24,6 +24,18 @@ const Projects = () => {
   // Updated projects with random relevant fallback images
   const projects: Project[] = [
     {
+      title: 'MyBillingApp',
+      description: 'An ultimate solution for hassle-free billing and invoicing. Whether you\'re a startup, small business, or established enterprise, our app offers everything you need to streamline billing processes and save time.',
+      image: 'images/mybillingapp.png',
+      images: ['images/mybillingapp_dash.png'],
+      tags: ['MySQL', 'Javascript', 'Python', 'Flask', 'HTML'],
+      purpose: 'To provide a user-friendly and efficient billing and invoicing system for businesses of all sizes. And connect Charterred Accountants.',
+      links: {
+        demo: 'https://mba.mybillingapp.com',
+        github: '#',
+      },
+    },
+    {
       title: 'GreenSathi - Krishi Guru',
       description: 'A platform where farmers can communication with chabot in multiple languages, Analysis plant images, Soil report and Mandi Data with weather analysis.',
       image: 'images/GreenSathi-new.png',
@@ -59,18 +71,18 @@ const Projects = () => {
         github: 'https://github.com/anni990/My-Public-Minor-Project',
       },
     },
-    {
-      title: 'Portfolio Website',
-      description: 'A modern portfolio website with smooth animations and responsive design.',
-      image: 'images/portfolio-img.png',
-      images: ['images/portfolio-1.png', 'images/portfolio-2.png'],
-      tags: ['React', 'Tailwind CSS', 'Framer Motion'],
-      purpose: 'To showcase my work and skills in an engaging and professional manner.',
-      links: {
-        demo: '#',
-        github: 'https://github.com/anni990/neonfolio-express',
-      },
-    },
+    // {
+    //   title: 'Portfolio Website',
+    //   description: 'A modern portfolio website with smooth animations and responsive design.',
+    //   image: 'images/portfolio-img.png',
+    //   images: ['images/portfolio-1.png', 'images/portfolio-2.png'],
+    //   tags: ['React', 'Tailwind CSS', 'Framer Motion'],
+    //   purpose: 'To showcase my work and skills in an engaging and professional manner.',
+    //   links: {
+    //     demo: '#',
+    //     github: 'https://github.com/anni990/neonfolio-express',
+    //   },
+    // },
   ];
 
   useEffect(() => {

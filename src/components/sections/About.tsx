@@ -41,10 +41,10 @@ const About = () => {
   }, []);
 
   const interests = [
-    { icon: <Layout className="w-5 h-5" />, label: 'Frontend Development' },
-    { icon: <Database className="w-5 h-5" />, label: 'Backend Systems' },
+    // { icon: <Layout className="w-5 h-5" />, label: 'Frontend Development' },
+    { icon: <Code className="w-5 h-5" />, label: 'Backend' },
     { icon: <Globe className="w-5 h-5" />, label: 'Web Technologies' },
-    { icon: <Radio className="w-5 h-5" />, label: 'Cloud Infrastructure' },
+    { icon: <Radio className="w-5 h-5" />, label: 'Generative AI' },
     { icon: <Brain className="w-5 h-5" />, label: 'Machine Learning' },
     { icon: <FlaskConical className="w-5 h-5" />, label: 'Data Analysis' },
   ];
