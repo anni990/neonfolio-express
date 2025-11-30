@@ -14,9 +14,22 @@ const Internships = () => {
   
   const internships: Internship[] = [
     {
+      title: 'SDE Intern',
+      company: 'Triotech Bizserve Pvt. Ltd.',
+      status: 'current',
+      responsibilities: [
+        'Develop RAG Based Model for Call Adherence analysis as Microservice (APIs)',
+        'Integrate apis in node.js backend and implement new logics',
+        'Implementing real-time data processing and analysis pipelines',
+        'Enhance the prompts of LLM calling apis for improving the responses',
+        'Collaborate with tech team for seamless integration'
+      ],
+      duration: 'Present (Stipend based)'
+    },
+    {
       title: 'AI Intern',
       company: 'Inventohack Innovation Pvt Ltd',
-      status: 'current',
+      status: 'completed',
       responsibilities: [
         'Developing and integrating ML models into full-stack web applications',
         'Implementing real-time data processing and analysis pipelines',
@@ -24,7 +37,7 @@ const Internships = () => {
         'Collaborating with cross-functional teams for seamless integration',
         'Optimizing model performance and deployment strategies'
       ],
-      duration: 'Present'
+      duration: '3 months (Stipend based)'
     },
     {
       title: 'Technical Assistant',
