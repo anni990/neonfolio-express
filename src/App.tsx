@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import AllProjects from './pages/AllProjects';
+import ProjectDetail from './pages/ProjectDetail';
 import CopyrightSearch from './pages/CopyrightSearch';
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/useTheme";
@@ -20,6 +21,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<AllProjects />} />
+            <Route path="/project/:projectId" element={<ProjectDetail />} />
             <Route path="/copyright-search" element={<CopyrightSearch />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

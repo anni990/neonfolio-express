@@ -34,7 +34,7 @@
 
     --radius: 0.5rem;
   }
-  
+
   .dark {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
@@ -64,11 +64,11 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 196 84% 55%;
   }
-  
+
   * {
     @apply border-border selection:bg-code-blue/20 selection:text-code-dark dark:selection:bg-code-blue/40 dark:selection:text-white;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
@@ -84,7 +84,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
@@ -92,143 +92,193 @@
   .glass-panel {
     @apply backdrop-blur-lg bg-white/60 border border-white/20 shadow-lg dark:bg-gray-900/60 dark:border-white/10;
   }
-  
+
   .code-block {
     @apply font-mono bg-code-terminal/5 rounded-md p-4 text-sm dark:bg-code-terminal/20;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .section-padding {
     @apply py-24 px-6 md:px-16 lg:px-24;
   }
-  
-  .stagger-animate > * {
+
+  .stagger-animate>* {
     @apply opacity-0;
     animation: fade-in 0.5s ease-out forwards;
   }
-  
-  .stagger-animate > *:nth-child(1) { animation-delay: 0.1s; }
-  .stagger-animate > *:nth-child(2) { animation-delay: 0.2s; }
-  .stagger-animate > *:nth-child(3) { animation-delay: 0.3s; }
-  .stagger-animate > *:nth-child(4) { animation-delay: 0.4s; }
-  .stagger-animate > *:nth-child(5) { animation-delay: 0.5s; }
-  .stagger-animate > *:nth-child(6) { animation-delay: 0.6s; }
-  
+
+  .stagger-animate>*:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-animate>*:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-animate>*:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-animate>*:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-animate>*:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .stagger-animate>*:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
   .terminal-text {
     @apply font-mono inline-block whitespace-nowrap overflow-hidden border-r-2 border-primary;
     animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
   }
-  
+
   .skill-bar {
     @apply h-2 bg-code-blue/20 rounded-full overflow-hidden relative dark:bg-code-blue/10;
   }
-  
+
   .skill-bar::after {
     @apply absolute h-full rounded-full bg-code-blue transition-all duration-1000 ease-out;
     content: '';
     width: 0;
   }
-  
+
   .skill-bar.animate::after {
     width: var(--skill-percent);
   }
-  
+
   .hover-card {
     @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg dark:hover:shadow-code-blue/20;
   }
-  
+
   .mesh-background {
     @apply bg-mesh-grid bg-[length:30px_30px] dark:opacity-20;
   }
-  
+
   .blur-backdrop {
     @apply backdrop-blur-xl bg-white/80 dark:bg-gray-900/80;
   }
-  
+
   /* Enhanced animations */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
-  
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
-  
+
   @keyframes pulse-glow {
-    0%, 100% { 
+
+    0%,
+    100% {
       box-shadow: 0 0 5px 0 rgba(97, 218, 251, 0.2);
     }
-    50% { 
+
+    50% {
       box-shadow: 0 0 20px 5px rgba(97, 218, 251, 0.4);
     }
   }
-  
+
   .pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
-  
+
   /* New hover effects */
   .project-card {
     @apply transition-all duration-500 hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-code-blue/20;
   }
-  
+
   .project-card:hover .project-overlay {
     @apply opacity-100;
   }
-  
+
   .project-card:hover img {
     @apply scale-110;
   }
-  
+
   .cert-card {
     @apply transition-all duration-500 hover:scale-[1.05] hover:shadow-xl hover:rotate-1 dark:hover:shadow-code-blue/20;
   }
-  
+
   .cert-card:hover .cert-content {
     @apply bg-code-green/10;
   }
-  
+
   .research-card {
     @apply transition-all duration-500 hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-code-green/20;
   }
-  
+
   .research-card:hover img {
     @apply scale-110;
   }
-  
+
   .research-card:hover .project-overlay {
     @apply opacity-100;
   }
-  
+
   .about-image {
     @apply transition-all duration-700 hover:shadow-2xl hover:shadow-code-blue/20 dark:hover:shadow-code-blue/40;
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .about-image:hover {
     animation-play-state: paused;
   }
-  
+
   .skill-icon {
     @apply transition-all duration-300 hover:scale-125 hover:rotate-6 hover:shadow-lg hover:shadow-code-blue/30;
   }
-  
+
   .social-icon {
     @apply transition-all duration-300 hover:scale-125 hover:text-code-blue;
   }
-  
+
   /* Custom zoom animation for success modal */
   @keyframes zoom {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
-  
+
   .animation-delay-300 {
     animation-delay: 300ms;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

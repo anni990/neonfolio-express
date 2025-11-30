@@ -24,16 +24,16 @@ const Navbar = () => {
     const handleScroll = () => {
       // Update navbar background on every scroll event
       setIsScrolled(window.scrollY > 10);
-      
+
       // Update active section based on scroll position
       const sections = document.querySelectorAll('section[id]');
-      
+
       sections.forEach((section) => {
         // Cast Element to HTMLElement to access offsetTop and offsetHeight
         const htmlSection = section as HTMLElement;
         const sectionTop = htmlSection.offsetTop;
         const sectionHeight = htmlSection.offsetHeight;
-        
+
         if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
           setActiveSection(section.id);
         }
@@ -48,16 +48,16 @@ const Navbar = () => {
     <header
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled 
-          ? 'py-3 blur-backdrop border-b border-white/10 shadow-sm translate-y-0' 
+        isScrolled
+          ? 'py-3 blur-backdrop border-b border-white/10 shadow-sm translate-y-0'
           : 'py-5 bg-transparent translate-y-0'
       )}
     >
       <div className="container max-w-6xl mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             className="flex items-center gap-2 text-code-blue font-medium"
           >
             <Code className="h-5 w-5" />
@@ -89,7 +89,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            
+
             {/* Theme toggle button */}
             <button
               onClick={toggleTheme}
@@ -117,7 +117,7 @@ const Navbar = () => {
                 <Moon className="h-5 w-5 text-code-blue" />
               )}
             </button>
-            
+
             <button
               className="text-code-dark p-2 rounded-full hover:bg-code-blue/10 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -125,9 +125,9 @@ const Navbar = () => {
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-code-blue" />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-5 w-5 text-code-blue" />
               )}
             </button>
           </div>
@@ -141,8 +141,8 @@ const Navbar = () => {
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <nav className="h-full flex flex-col p-8">
-          <div className="space-y-6 flex flex-col">
+        <nav className="h-full flex flex-col p-8 bg-white/95 dark:bg-gray-900/95">
+          <div className="space-y-6 flex flex-col bg-white/95 dark:bg-gray-900/95">
             {navLinks.map((link) => (
               <a
                 key={link.name}
