@@ -98,8 +98,8 @@ const About = () => {
 
             <p className="text-lg text-foreground/80 dark:text-white/80 mb-6 opacity-0">
               I am B.Tech student specializing in Artificial Intelligence and Machine Learning,
-              excels in languages like HTML, CSS, C/C++, Python With hands-on experience in projects like Renewable Energy Forecasting, Green Sathi - Krishi Guru and Movie Recommendation System and
-              some webscapping mini projects. It demonstrates expertise in data preprocessing, data analysis
+              excels in languages like Python - FastAPI/Flask, Langchain Framework, Agentic AI With hands-on experience in projects like Convoze - Post Speech Analytics tool, Renewable Energy Forecasting, Green Sathi - Krishi Guru and Movie Recommendation System and
+              some webscapping mini projects. It demonstrates expertise in RAG system, Agentic AI solutions
               and Problem Solving Ideas.
             </p>
 
