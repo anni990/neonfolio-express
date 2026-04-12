@@ -4,12 +4,33 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { projectsData } from '@/data/projectsData';
+import { useMetaTags } from '@/hooks/useMetaTags';
+import { useStructuredData, generateBreadcrumbSchema } from '@/hooks/useStructuredData';
+import { PAGES_SEO, SEO_CONFIG } from '@/lib/seo';
 
 const AllProjects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  // Set meta tags for projects page
+  useMetaTags({
+    title: PAGES_SEO.projects.title,
+    description: PAGES_SEO.projects.description,
+    keywords: PAGES_SEO.projects.keywords,
+    url: `${SEO_CONFIG.baseUrl}/projects`,
+    canonicalUrl: `${SEO_CONFIG.baseUrl}/projects`,
+  });
+
+  // Add breadcrumb structured data
+  useStructuredData({
+    type: 'webpage',
+    data: generateBreadcrumbSchema([
+      { name: 'Home', url: SEO_CONFIG.baseUrl },
+      { name: 'Projects', url: `${SEO_CONFIG.baseUrl}/projects` },
+    ]),
+  });
 
   // Scroll to top when component mounts
   useEffect(() => {

@@ -1,0 +1,35 @@
+# Robots.txt for anni990.me
+# This file helps search engines understand which pages to crawl
+
+User-agent: *
+Allow: /
+Allow: /projects
+Allow: /project/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.json
+Allow: /images/
+Allow: /public/
+
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /*.pdf$
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.*\.map$
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+
+# Specific crawl delay
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://anni990.me/sitemap.xml

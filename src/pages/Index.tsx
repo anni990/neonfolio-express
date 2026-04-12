@@ -10,12 +10,26 @@ import ResearchWork from '@/components/sections/ResearchWork';
 import Certifications from '@/components/sections/Certifications';
 import Contact from '@/components/sections/Contact';
 import Internships from '@/components/sections/Internships';
+import { useMetaTags } from '@/hooks/useMetaTags';
+import { useStructuredData, generatePersonSchema } from '@/hooks/useStructuredData';
+import { PAGES_SEO, SEO_CONFIG, getHomePageStructuredData } from '@/lib/seo';
 
 const Index = () => {
-  useEffect(() => {
-    // Set page title
-    document.title = 'Aniket Kumar Mishra | Machine Learning Engineer';
-  }, []);
+  // Set meta tags for homepage
+  useMetaTags({
+    title: PAGES_SEO.home.title,
+    description: PAGES_SEO.home.description,
+    keywords: PAGES_SEO.home.keywords,
+    image: `${SEO_CONFIG.baseUrl}/og-image.jpeg`,
+    url: SEO_CONFIG.baseUrl,
+    canonicalUrl: SEO_CONFIG.baseUrl,
+  });
+
+  // Add structured data
+  useStructuredData({
+    type: 'person',
+    data: getHomePageStructuredData(),
+  });
 
   return (
     <div className="flex flex-col min-h-screen">

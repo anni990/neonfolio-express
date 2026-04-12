@@ -4,6 +4,9 @@ import { ArrowLeft, ExternalLink, Github, Layers, Target, Code, CheckCircle, Lig
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { projectsData } from '@/data/projectsData';
+import { useMetaTags } from '@/hooks/useMetaTags';
+import { useStructuredData, generateBreadcrumbSchema } from '@/hooks/useStructuredData';
+import { PAGES_SEO, SEO_CONFIG } from '@/lib/seo';
 
 const ProjectDetail = () => {
     const { projectId } = useParams<{ projectId: string }>();
@@ -11,6 +14,28 @@ const ProjectDetail = () => {
     const sectionRef = useRef<HTMLElement>(null);
 
     const project = projectsData.find(p => p.id === projectId);
+
+    // Set meta tags for project detail page
+    if (project) {
+        useMetaTags({
+            title: PAGES_SEO.projectDetail(project.title).title,
+            description: PAGES_SEO.projectDetail(project.title).description || project.description,
+            keywords: `${project.tags.join(', ')}, ${project.title}`,
+            image: project.image,
+            url: `${SEO_CONFIG.baseUrl}/project/${projectId}`,
+            canonicalUrl: `${SEO_CONFIG.baseUrl}/project/${projectId}`,
+        });
+
+        // Add breadcrumb structured data
+        useStructuredData({
+            type: 'webpage',
+            data: generateBreadcrumbSchema([
+                { name: 'Home', url: SEO_CONFIG.baseUrl },
+                { name: 'Projects', url: `${SEO_CONFIG.baseUrl}/projects` },
+                { name: project.title, url: `${SEO_CONFIG.baseUrl}/project/${projectId}` },
+            ]),
+        });
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);

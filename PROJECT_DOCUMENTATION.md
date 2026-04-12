@@ -37,7 +37,7 @@ neonfolio-express/
 │   ├── resume/                     # Resume files
 │   ├── CNAME                       # Custom domain config
 │   ├── favicon.ico
-│   ├── og-image.png               # Open Graph image
+│   ├── og-image.jpeg               # Open Graph image
 │   └── placeholder.svg
 │
 ├── src/                            # Source code
