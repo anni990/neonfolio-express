@@ -1,0 +1,54 @@
+{
+  "name": "Aniket Kumar Mishra - AI Engineer & ML Specialist",
+  "short_name": "Aniket Mishra",
+  "description": "AI Engineer specializing in backend systems, LLM integration, generative AI, and agentic AI. Experienced full-stack software developer with expertise in machine learning.",
+  "start_url": "https://anni990.me",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f0f1e",
+  "theme_color": "#0f0f1e",
+  "categories": ["portfolio", "technology", "engineering"],
+  "screenshots": [
+    {
+      "src": "/og-image.jpeg",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpeg",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "View Projects",
+      "short_name": "Projects",
+      "description": "View all of my portfolio projects",
+      "url": "https://anni990.me/projects",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
