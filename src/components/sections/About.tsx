@@ -42,8 +42,8 @@ const About = () => {
 
   const interests = [
     // { icon: <Layout className="w-5 h-5" />, label: 'Frontend Development' },
-    { icon: <Code className="w-5 h-5" />, label: 'Backend' },
-    { icon: <Globe className="w-5 h-5" />, label: 'Web Technologies' },
+    { icon: <Code className="w-5 h-5" />, label: 'Python Backend' },
+    { icon: <Globe className="w-5 h-5" />, label: 'Agentic AI' },
     { icon: <Radio className="w-5 h-5" />, label: 'Generative AI' },
     { icon: <Brain className="w-5 h-5" />, label: 'Machine Learning' },
     { icon: <FlaskConical className="w-5 h-5" />, label: 'Data Analysis' },
@@ -62,7 +62,7 @@ const About = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden glass-panel about-image pulse-glow">
                 <img
-                  src="/images/my/Aniket Kumar Mishra Profile Photo New 7-Photoroom.jpg"
+                  src="/images/my/Aniket Kumar Mishra Profile Photo New 8-Photoroom.jpeg"
                   alt="Developer portrait"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -97,10 +97,7 @@ const About = () => {
             </h2>
 
             <p className="text-lg text-foreground/80 dark:text-white/80 mb-6 opacity-0">
-              I am B.Tech student specializing in Artificial Intelligence and Machine Learning,
-              excels in languages like Python - FastAPI/Flask, Langchain Framework, Agentic AI With hands-on experience in projects like Convoze - Post Speech Analytics tool, Renewable Energy Forecasting, Green Sathi - Krishi Guru and Movie Recommendation System and
-              some webscapping mini projects. It demonstrates expertise in RAG system, Agentic AI solutions
-              and Problem Solving Ideas.
+              I am an AI Engineer and focused on building practical, reliable, and intuitive solutions with modern AI technologies. I work at the intersection of data, Python, and intelligent automation — transforming ideas into real-world tools and experiences. My work spans full-stack AI development, including Generative AI applications, LangChain-powered automations, and scalable ML systems.
             </p>
 
             {/* <p className="text-lg text-foreground/80 dark:text-white/80 mb-10 opacity-0">

@@ -57,18 +57,18 @@ const Hero = () => {
           I build <span className="relative">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-code-blue to-code-green">exceptional</span>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-code-blue to-code-green rounded-full opacity-30"></span>
-          </span> web experiences with AI
+          </span> Backend Systems with AI
         </h1>
 
         <div className="mb-8 code-block inline-block text-left">
           <TerminalText
-            text="const_skills = ['Python', 'Data Analysis', 'Machine Learning', 'UX Design']"
+            text="const_skills = ['Python', 'Generative AI', 'Machine Learning', 'Agentic AI', 'Data Analysis']"
             className="text-code-light"
           />
         </div>
 
         <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto">
-          A passionate Machine Learning Engineer building intuitive, robust, and beautiful digital experiences with AI.
+          A passionate AI Engineer building intuitive, robust, and impactful digital experiences with AI.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -84,7 +84,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="/resume/Aniket Kumar Mishra resume nov.pdf"
+            href="/resume/Aniket Kumar Mishra resume march 26.pdf"
             download="Aniket Kumar Mishra Resume.pdf"
             className="px-8 py-3 rounded-lg border border-code-blue/30 text-code-blue font-medium transition-all hover:bg-code-blue/5 hover:border-code-blue"
           >

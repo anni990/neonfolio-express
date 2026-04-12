@@ -17,6 +17,26 @@ export interface Project {
 
 export const projectsData: Project[] = [
     {
+        id: 'convoze',
+        title: 'Convoze - Speech Analytics Tool',
+        description: 'Convoze is an AI-powered conversational intelligence platform that transforms customer voice and text interactions into actionable insights. It leverages speech analytics and natural language processing to automate quality auditing and enhance team performance.',
+        image: '/images/convoze_dash.png',
+        images: ['/images/convoze_dash.png', '/images/convoze_interaction.png'],
+        tags: ['Micoservice', 'Python', 'Flask', 'Langchain', 'LLM'],
+        purpose: 'To empower businesses with 100% call visibility, ensuring compliance and improving customer experience through automated sentiment and performance analysis.',
+        features: [
+            "Automated Quality Auditing",
+            "Real-time Sentiment Analysis",
+            "Multilingual Speech Transcription",
+            "AI-Generated Call Summaries",
+            "Actionable Performance Analytics"
+        ],
+        links: {
+            demo: 'https://convoze.com',
+            github: '#',
+        },
+    },
+    {
         id: 'mybillingapp',
         title: 'MyBillingApp',
         description: 'An ultimate solution for hassle-free billing and invoicing. Whether you\'re a startup, small business, or established enterprise, our app offers everything you need to streamline billing processes and save time.',

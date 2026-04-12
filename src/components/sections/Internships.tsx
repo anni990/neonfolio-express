@@ -24,7 +24,7 @@ const Internships = () => {
         'Enhance the prompts of LLM calling apis for improving the responses',
         'Collaborate with tech team for seamless integration'
       ],
-      duration: 'Present (Stipend based)'
+      duration: '6+2 months (Stipend based)'
     },
     {
       title: 'AI Intern',
