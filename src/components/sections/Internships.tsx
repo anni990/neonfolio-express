@@ -14,9 +14,22 @@ const Internships = () => {
   
   const internships: Internship[] = [
     {
+      title: 'GenAI Developer Intern',
+      company: 'Fullscreens Technologies Pvt. Ltd.',
+      status: 'current',
+      responsibilities: [
+        'Working on Fullscreens’ products involving Generative AI',
+        'Contributing to development and implementation of AI-driven solutions',
+        'Collaborating with engineering, product, and research teams',
+        'Developing Document Intelligence Service as a complete AI Agent',
+        'Preparing high-quality datasets to support LLM training and optimization'
+      ],
+      duration: '2 months (Stipend based)'
+    },
+    {
       title: 'SDE Intern',
       company: 'Triotech Bizserve Pvt. Ltd.',
-      status: 'current',
+      status: 'completed',
       responsibilities: [
         'Develop RAG Based Model for Call Adherence analysis as Microservice (APIs)',
         'Integrate apis in node.js backend and implement new logics',
